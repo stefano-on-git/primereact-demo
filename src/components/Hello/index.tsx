@@ -11,7 +11,7 @@ const Hello = () => {
         <li>🔨 Eslint</li>
         <li>💅 Prettier</li>
       </ul>
-      <p>Don&apos;t forgot to install Eslint and Prettier in your VSCode</p>
+      <p>Don&apos;t forgot to install Eslint and Prettier in your VSCode!</p>
       <div>
         <a
           className='text-primary'
