@@ -1,4 +1,5 @@
 import logo from '~/logo.svg';
+import TestFetch from '../TestFetch';
 
 const Hello = () => {
   return (
@@ -22,6 +23,7 @@ const Hello = () => {
           Github
         </a>
       </div>
+      <TestFetch />
     </div>
   );
 };

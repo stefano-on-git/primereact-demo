@@ -48,9 +48,16 @@ import 'primeicons/primeicons.css'; //icons
 import 'primeflex/primeflex.css';
 
 import Hello from '~/components/Hello';
+import FetchProvider from './components/Context/FetchContext';
+import Loading from './components/Loading';
 
 function App() {
-  return <Hello />;
+  return (
+    <FetchProvider>
+      <Hello />
+      <Loading />
+    </FetchProvider>
+  );
 }
 
 export default App;
