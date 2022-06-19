@@ -49,13 +49,16 @@ import 'primeflex/primeflex.css';
 
 import Hello from '~/components/Hello';
 import FetchProvider from './components/Context/FetchContext';
-import Loading from './components/Loading';
+import LoadingSpinner from './components/LoadingSpinner';
+import BlurLoadingWrapper from './components/BlurLoadingWrapper';
 
 function App() {
   return (
     <FetchProvider>
-      <Hello />
-      <Loading />
+      <BlurLoadingWrapper>
+        <Hello />
+      </BlurLoadingWrapper>
+      <LoadingSpinner />
     </FetchProvider>
   );
 }
