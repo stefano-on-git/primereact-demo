@@ -16,20 +16,35 @@ export default function Loading() {
 
   return (
     (count > 0 && (
-      <ProgressSpinner
-        style={{
-          boxShadow: '0 0 15px #00000033',
-          borderRadius: '50%',
-          width: '60px',
-          height: '60px',
-          position: 'fixed',
-          top: mouseY,
-          left: mouseX,
-        }}
-        strokeWidth='8'
-        fill='transparent'
-        animationDuration='.5s'
-      />
+      <>
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            backgroundColor: '#00000000',
+            zIndex: 6000,
+          }}
+        ></div>
+        <ProgressSpinner
+          style={{
+            boxShadow: '0 0 5px #ffffff55',
+            backgroundColor: '#00000099',
+            borderRadius: '50%',
+            width: '40px',
+            height: '40px',
+            position: 'fixed',
+            top: mouseY - 20,
+            left: mouseX - 20,
+            zIndex: 6001,
+          }}
+          strokeWidth='8'
+          fill='#00000099'
+          animationDuration='1s'
+        />
+      </>
     )) ||
     null
   );
