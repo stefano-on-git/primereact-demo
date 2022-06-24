@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import logo from '~/logo.svg';
-import TestFetch from '../TestFetch';
+import useFetch from '../Hooks/UseFetch';
 
 const Hello = () => {
+  const [fetchUrl, setFetchUrl] = useState<string>('');
+  const [fetchUrl2, setFetchUrl2] = useState<string>('');
+  const user = useFetch<{ nome: string; cognome: string }>(fetchUrl);
+  const user2 = useFetch<{ nome: string; cognome: string }>(fetchUrl2);
+
   return (
     <div className='flex flex-column align-items-center h-screen justify-content-center'>
       <img src={logo} alt='Logo' style={{ height: '150px' }} />
@@ -23,7 +29,24 @@ const Hello = () => {
           Github
         </a>
       </div>
-      <TestFetch />
+      <button
+        onClick={() => {
+          setFetchUrl(`json/user.json?${+new Date()}`);
+          setFetchUrl2(`json/user2.json?${+new Date()}`);
+        }}
+      >
+        Fetch data
+      </button>
+      {user.data && (
+        <div>
+          {user.data.nome} {user.data.cognome}
+        </div>
+      )}
+      {user2.data && (
+        <div>
+          {user2.data.nome} {user2.data.cognome}
+        </div>
+      )}
     </div>
   );
 };

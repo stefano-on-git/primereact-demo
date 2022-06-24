@@ -1,4 +1,4 @@
-import { useFecthContext } from './Context/FetchContext';
+import { useFecthContext } from '../Context/FetchContext';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { useEffect, useRef } from 'react';
 
