@@ -1,4 +1,5 @@
-import { createContext, PropsWithChildren, useContext, useState } from 'react';
+import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
+import { Button } from 'primereact/button';
 
 interface iAuthCtx {
   username: string;
@@ -12,11 +13,20 @@ export default function AuthProvider({ children }: PropsWithChildren) {
   const [username, setUsername] = useState<string>('');
   const [isAuth, setIsAuth] = useState<boolean>(false);
 
+  useEffect(() => {
+    setIsAuth(username !== '');
+  }, [username]);
+
   return (
     <AuthContext.Provider
       value={{ username: username, setUsername: setUsername, isAuth: isAuth, setIsAuth: setIsAuth }}
     >
-      {!isAuth && <div>Non sei autenticato</div>}
+      {!isAuth && (
+        <div className='m-3 inline-flex align-items-center justify-content-center'>
+          Non sei autenticato,
+          <Button onClick={() => setUsername('stefano')} label='Login' className='m-2' />
+        </div>
+      )}
       {isAuth && children}
     </AuthContext.Provider>
   );
