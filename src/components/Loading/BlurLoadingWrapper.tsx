@@ -1,8 +1,8 @@
 import { PropsWithChildren } from 'react';
-import { useFecthContext } from '../Context/FetchContext';
+import { useFetchContext } from '../Context/FetchContext';
 
 export default function BlurLoadingWrapper({ children }: PropsWithChildren) {
-  const { count } = useFecthContext();
+  const { count } = useFetchContext();
 
   return (
     <div

@@ -16,4 +16,4 @@ export default function FetchProvider({ children }: PropsWithChildren) {
   );
 }
 
-export const useFecthContext = () => useContext(FetchContext);
+export const useFetchContext = () => useContext(FetchContext);

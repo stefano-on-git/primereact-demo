@@ -1,9 +1,9 @@
-import { useFecthContext } from '../Context/FetchContext';
+import { useFetchContext } from '../Context/FetchContext';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { useEffect, useRef } from 'react';
 
 export default function Loading() {
-  const { count } = useFecthContext();
+  const { count } = useFetchContext();
   const spinnerContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

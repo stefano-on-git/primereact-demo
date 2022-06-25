@@ -1,4 +1,4 @@
-import { useFecthContext } from '../Context/FetchContext';
+import { useFetchContext } from '../Context/FetchContext';
 import { getRandomIntInclusive } from '../../Utilities';
 import { useEffect, useReducer, useRef } from 'react';
 import axios, { AxiosRequestConfig } from 'axios';
@@ -21,7 +21,7 @@ type Action<T> =
   | { type: 'failure'; payload: string };
 
 function useFetch<T = unknown>(url?: string, options?: AxiosRequestConfig): State<T> {
-  const { count, setCount } = useFecthContext();
+  const { count, setCount } = useFetchContext();
   const cache = useRef<Cache<T>>({});
   const cancelRequest = useRef<boolean>(false);
 
