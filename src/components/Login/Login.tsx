@@ -23,8 +23,10 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
         <div className='flex align-items-center justify-content-center w-full h-screen'>
           <div className='surface-card p-6 shadow-4 hover:shadow-6 border-round w-9'>
             <div className='text-center mb-5'>
-              <img src='images/logo.svg' alt='hyper' height={50} className='mb-3' />
-              <div className='text-900 text-3xl font-medium mb-3 uppercase'>Come minimo!</div>
+              <img src='images/logo.svg' alt='hyper' height={50} className='' />
+              <div style={{ fontFamily: 'Cookie' }} className='text-2xl'>
+                Come minimo!
+              </div>
             </div>
             <div>
               <label htmlFor='email' className='block text-900 font-medium mb-2'>
@@ -86,7 +88,10 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
           src='images/condominio.jpg'
           alt='hero-1'
           className='h-screen w-auto m-0 p-0'
-          style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }}
+          style={{
+            borderLeft: '4px solid #ffcc0055',
+            clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)',
+          }}
         />
       </div>
     </div>
