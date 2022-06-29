@@ -7,8 +7,55 @@ body {
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.login-bg-carousel {
+  clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%);
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: login-carousel-from-right-to-left;
+  background-image: url(images/condominio.jpg);
+}
+
+@keyframes login-carousel-opacity {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes login-carousel-from-right-to-left {
+  0% {
+    transform: translateX(100vw);
+  }
+  25% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
 }

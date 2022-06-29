@@ -19,12 +19,15 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
 
   return (
     <div className='grid grid-nogutter surface-0 text-800'>
-      <div className='col-12 md:col-6 p-0 text-center md:text-left flex align-items-center'>
+      <div
+        style={{ position: 'relative', zIndex: 2 }}
+        className='col-12 md:col-6 p-0 text-center md:text-left flex align-items-center'
+      >
         <div className='flex align-items-center justify-content-center w-full h-screen'>
           <div className='surface-card p-6 shadow-6 border-round w-9'>
             <div className='text-center mb-5'>
               <img
-                src='images/logo.svg'
+                src='images/octopus.svg'
                 alt='hyper'
                 height={60}
                 style={{
@@ -35,7 +38,7 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
                 style={{ fontFamily: 'Cookie', textShadow: '0 2px 1px #000' }}
                 className='text-3xl'
               >
-                My Condominio
+                Octopus Condominio
               </div>
             </div>
             <div>
@@ -93,15 +96,7 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
           </div>
         </div>
       </div>
-      <div
-        className='col-12 md:col-6 m-0 p-0 overflow-hidden max-h-screen'
-        style={{
-          clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)',
-          backgroundImage: 'url(images/condominio.jpg)',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-      ></div>
+      <div className='col-12 md:col-6 m-0 p-0 overflow-hidden max-h-screen login-bg-carousel'></div>
     </div>
   );
 };
