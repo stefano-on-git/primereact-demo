@@ -21,11 +21,21 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
     <div className='grid grid-nogutter surface-0 text-800'>
       <div className='col-12 md:col-6 p-0 text-center md:text-left flex align-items-center'>
         <div className='flex align-items-center justify-content-center w-full h-screen'>
-          <div className='surface-card p-6 shadow-4 hover:shadow-6 border-round w-9'>
+          <div className='surface-card p-6 shadow-6 border-round w-9'>
             <div className='text-center mb-5'>
-              <img src='images/logo.svg' alt='hyper' height={50} className='' />
-              <div style={{ fontFamily: 'Cookie' }} className='text-2xl'>
-                Come minimo!
+              <img
+                src='images/logo.svg'
+                alt='hyper'
+                height={60}
+                style={{
+                  filter: 'drop-shadow(0 2px 1px #000)',
+                }}
+              />
+              <div
+                style={{ fontFamily: 'Cookie', textShadow: '0 2px 1px #000' }}
+                className='text-3xl'
+              >
+                My Condominio
               </div>
             </div>
             <div>
@@ -83,17 +93,15 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
           </div>
         </div>
       </div>
-      <div className='col-12 md:col-6 m-0 p-0 overflow-hidden max-h-screen'>
-        <img
-          src='images/condominio.jpg'
-          alt='hero-1'
-          className='h-screen w-auto m-0 p-0'
-          style={{
-            borderLeft: '4px solid #ffcc0055',
-            clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)',
-          }}
-        />
-      </div>
+      <div
+        className='col-12 md:col-6 m-0 p-0 overflow-hidden max-h-screen'
+        style={{
+          clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)',
+          backgroundImage: 'url(images/condominio.jpg)',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+        }}
+      ></div>
     </div>
   );
 };

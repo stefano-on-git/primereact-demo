@@ -1,5 +1,5 @@
 import { createContext, PropsWithChildren, useContext, useState } from 'react';
-import Login from '../Login/Login';
+import Login from '../Login';
 
 interface iAuthCtx {
   username: string;

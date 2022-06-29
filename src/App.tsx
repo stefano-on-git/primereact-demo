@@ -47,19 +47,20 @@ import 'primereact/resources/primereact.min.css'; //core css
 import 'primeicons/primeicons.css'; //icons
 import 'primeflex/primeflex.css';
 
-import Hello from '~/components/Hello';
+//import Hello from '~/components/Hello';
 import FetchProvider from './components/Context/FetchContext';
 import LoadingSpinner from './components/Loading/LoadingSpinner';
 import BlurLoadingWrapper from './components/Loading/BlurLoadingWrapper';
 import AuthProvider from './components/Context/AuthContext';
+import Layout from './components/Layout';
 
 function App() {
   return (
     <FetchProvider>
       <BlurLoadingWrapper>
         <AuthProvider>
-          {/* <Layout /> */}
-          <Hello />
+          <Layout />
+          {/* <Hello /> */}
         </AuthProvider>
       </BlurLoadingWrapper>
       <LoadingSpinner />
