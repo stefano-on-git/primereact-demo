@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from 'primereact/button';
 import { Checkbox } from 'primereact/checkbox';
 import { InputText } from 'primereact/inputtext';
+import './index.css';
 
 interface iLogin {
   setUsername: React.Dispatch<React.SetStateAction<string>>;
@@ -19,10 +20,7 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
 
   return (
     <div className='grid grid-nogutter surface-0 text-800'>
-      <div
-        style={{ position: 'relative', zIndex: 2 }}
-        className='col-12 md:col-6 p-0 text-center md:text-left flex align-items-center'
-      >
+      <div className='col-12 md:col-6 p-0 text-center md:text-left flex align-items-center left-in'>
         <div className='flex align-items-center justify-content-center w-full h-screen'>
           <div className='surface-card p-6 shadow-6 border-round w-9'>
             <div className='text-center mb-5'>
@@ -45,22 +43,28 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
               <label htmlFor='email' className='block text-900 font-medium mb-2'>
                 Email
               </label>
-              <InputText
-                id='email'
-                autoComplete={(+new Date()).toString()}
-                ref={inputEmail}
-                type='text'
-                className='w-full mb-3'
-              />
-              <label htmlFor='password' className='block text-900 font-medium mb-2'>
+              <span className='p-input-icon-left w-full'>
+                <i className='pi pi-envelope' />
+                <InputText
+                  id='email'
+                  autoComplete={(+new Date()).toString()}
+                  ref={inputEmail}
+                  type='text'
+                  className='w-full'
+                />
+              </span>
+              <label htmlFor='password' className='block text-900 font-medium mt-3 mb-2'>
                 Password
               </label>
-              <InputText
-                id='password'
-                autoComplete={(+new Date()).toString()}
-                type='password'
-                className='w-full mb-3'
-              />
+              <span className='p-input-icon-left w-full'>
+                <i className='pi pi-key' />
+                <InputText
+                  id='password'
+                  autoComplete={(+new Date()).toString()}
+                  type='password'
+                  className='w-full'
+                />
+              </span>
               <div className='flex align-items-center justify-content-between mb-6'>
                 <div className='flex align-items-center'>
                   <Checkbox
@@ -96,7 +100,15 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
           </div>
         </div>
       </div>
-      <div className='col-12 md:col-6 m-0 p-0 overflow-hidden max-h-screen login-bg-carousel'></div>
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 2,
+          boxShadow: '0 0 10px #000',
+          borderLeft: '1px dashed #ffd54f',
+        }}
+        className='col-12 md:col-6 m-0 p-0 overflow-hidden max-h-screen login-bg-carousel'
+      ></div>
     </div>
   );
 };

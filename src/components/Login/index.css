@@ -1,0 +1,62 @@
+.backdrop {
+  background-color: #1f2d4080 !important;
+  backdrop-filter: blur(15px);
+}
+
+.left-in {
+  animation-name: login-carousel-opacity, login-carousel-from-right-to-left;
+  animation-duration: 1.5s, 1s;
+  animation-delay: 0s, 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.login-bg-carousel {
+  /* clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(images/condominio.jpg);
+  animation-name: login-carousel-opacity, login-carousel-brightness,
+    login-carousel-from-right-to-left, login-carousel-slide;
+  animation-duration: 0.5s, 1.5s, 1s, 60s;
+  animation-iteration-count: 1, 1, 1, infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation-direction: normal, normal, normal, alternate;
+  animation-delay: 0s, 0.5s, 0.5s, 0.5s;
+}
+
+@keyframes login-carousel-slide {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+@keyframes login-carousel-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes login-carousel-brightness {
+  0% {
+    filter: brightness(4);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes login-carousel-from-right-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

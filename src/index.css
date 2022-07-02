@@ -10,52 +10,38 @@ body {
   overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+/* Scrollbar styles
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.login-bg-carousel {
-  clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%);
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation-name: login-carousel-from-right-to-left;
-  background-image: url(images/condominio.jpg);
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #111822;
 }
 
-@keyframes login-carousel-opacity {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
 }
 
-@keyframes login-carousel-from-right-to-left {
-  0% {
-    transform: translateX(100vw);
-  }
-  25% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(0%);
-  }
-  75% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100vw);
-  }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+a,
+p,
+div,
+span,
+b,
+strong,
+td,
+th {
+  user-select: none !important;
+}
+
+* {
+  outline: none !important;
 }
