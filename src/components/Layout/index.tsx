@@ -4,6 +4,7 @@ import { Menu } from 'primereact/menu';
 import { useRef } from 'react';
 import { Button } from 'primereact/button';
 import { MenuItem } from 'primereact/menuitem';
+import { BreadCrumb } from 'primereact/breadcrumb';
 
 const Layout = () => {
   const optionsItems: MenuItem[] = [
@@ -55,14 +56,30 @@ const Layout = () => {
     },
   ];
 
+  const breadcrumbItems = [
+    { label: 'Categories' },
+    { label: 'Sports' },
+    { label: 'Football' },
+    { label: 'Countries' },
+    { label: 'Spain' },
+    { label: 'F.C. Barcelona' },
+    { label: 'Squad' },
+    { label: 'Lionel Messi', url: 'https://en.wikipedia.org/wiki/Lionel_Messi' },
+  ];
+
+  const home = { icon: 'pi pi-home', url: 'https://www.primefaces.org/primereact' };
+
   const { setIsAuth } = useAuthContext();
   const menu = useRef<Menu>(null);
 
   return (
     <div className='flex flex-column overflow-hidden h-screen'>
       <div className='shadow-4 surface-card border-bottom-1 surface-border'>
-        <div className='flex justify-content-start flex-row align-items-center'>
-          <div className='flex align-items-center border-right-1 border-black-alpha-50 surface-0 shadow-2 py-3 px-5'>
+        <div style={{ height: 60 }} className='flex justify-content-start align-items-stretch'>
+          <div
+            style={{ minWidth: 300 }}
+            className='flex flex-fixed align-items-center justify-content-evenly border-right-1 border-black-alpha-50 surface-0'
+          >
             <img
               src='images/octopus.svg'
               alt='hyper'
@@ -76,25 +93,30 @@ const Layout = () => {
                 fontFamily: 'Cookie',
                 textShadow: '0 2px 1px #000',
               }}
-              className='text-3xl ml-2'
+              className='text-3xl'
             >
               Octopus Condominio
             </div>
-          </div>
-          <div className='flex align-items-center p-3 border-left-1 surface-border'>
             <Button
-              className='flex'
+              className='flex ml-3'
               label=''
               icon='pi pi-bars'
               onClick={(event) => menu.current!.toggle(event)}
               aria-controls='popup_menu'
               aria-haspopup
             />
-          </div>
-          <div className='flex align-items-center'>
             <Menu model={items} popup ref={menu} />
             <ConfirmDialog />
           </div>
+          <div className='flex align-items-center border-left-1 surface-border pl-3'>
+            <BreadCrumb
+              model={breadcrumbItems}
+              home={home}
+              className='p-0 text-sm'
+              style={{ border: 0 }}
+            />
+          </div>
+          <div className='flex align-items-center'></div>
         </div>
       </div>
       <div className='flex flex-column flex-grow-1 overflow-hidden border-top-1 border-black-alpha-90'>
