@@ -15,7 +15,7 @@
   /* clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%); */
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(images/condominio.jpg);
+  background-image: url(/images/condominio.jpg);
   animation-name: login-carousel-opacity, login-carousel-brightness,
     login-carousel-from-right-to-left, login-carousel-slide;
   animation-duration: 0.5s, 1.5s, 1s, 60s;
