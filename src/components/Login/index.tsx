@@ -12,10 +12,10 @@ interface iLogin {
 
 const Loading = ({ setIsAuth, setUsername }: iLogin) => {
   const [checked, setChecked] = useState<boolean>(false);
-  const inputEmail = useRef<InputText>(null);
+  const inputEmail = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    (inputEmail.current as unknown as HTMLInputElement).focus();
+    (inputEmail.current as HTMLInputElement).focus();
   }, []);
 
   return (
@@ -47,7 +47,7 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
                 <i className='pi pi-envelope' />
                 <InputText
                   id='email'
-                  autoComplete={(+new Date()).toString()}
+                  autoComplete='off'
                   ref={inputEmail}
                   type='text'
                   className='w-full'
@@ -69,7 +69,7 @@ const Loading = ({ setIsAuth, setUsername }: iLogin) => {
                 <div className='flex align-items-center'>
                   <Checkbox
                     id='rememberme'
-                    onChange={(e) => setChecked(e.checked)}
+                    onChange={(e) => setChecked(e.checked!)}
                     checked={checked}
                     className='mr-2'
                   />
